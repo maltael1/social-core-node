@@ -17,8 +17,14 @@ export default {
   components: {
     HeaderBar
   },
+  data(){
+    return{
+      user_signed_in: false
+    }
+  },
   name: 'app'
 }
+
 </script>
 
 <style>
