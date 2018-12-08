@@ -10,7 +10,7 @@
 </template>
 
 <script>
-
+const axios = require('axios');
 import HeaderBar from './components/HeaderBar'
 
 export default {
