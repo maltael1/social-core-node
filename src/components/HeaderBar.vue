@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-links">
+  <div class="menu-links" v-show="this.$parent.loaded">
     <router-link to="/">Home</router-link>
     <router-link v-if="!this.$parent.user_signed_in" to="/login">Login</router-link>
   </div>

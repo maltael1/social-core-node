@@ -13,7 +13,8 @@ export default {
   },
   methods: {
     login_with_token: function(token){
-      this.$parent.user_signed_in = true
+      this.$root.$options.VueCookie.set("social-core-token", token)
+    this.$parent.user_signed_in = true
       this.$router.push('/')
     }
   }

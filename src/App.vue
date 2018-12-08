@@ -12,14 +12,28 @@
 <script>
 const axios = require('axios');
 import HeaderBar from './components/HeaderBar'
-
 export default {
+  beforeCreate: function () {
+    axios
+    .get('http://localhost:3000/api/v1/sessions', 
+        {
+            token: this.$root.$options.VueCookie.get("social-core-token")
+        }
+    )
+    .then(response => (
+        this.user_signed_in = true,
+        this.loaded = true
+        
+    ))
+    .catch(err => {})
+  },
   components: {
     HeaderBar
   },
   data(){
     return{
-      user_signed_in: false
+      user_signed_in: false,
+      loaded: false
     }
   },
   name: 'app'
