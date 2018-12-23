@@ -1,21 +1,14 @@
 <template>
   <div class="menu-links">
     <router-link to="/">Home</router-link>
-    <router-link to="/login">Login</router-link>
+    <router-link v-if="!this.$parent.user_signed_in" to="/login">Login</router-link>
   </div>
 </template>
 
 <script>
-//import { mapGetters } from 'vuex'
 
 export default {
-  // computed: {
-  //   // mix the getters into the computed object
-  //   ...mapGetters([
-  //     'cartCount'
 
-  //   ])
-  // }
 }
 </script>
 
